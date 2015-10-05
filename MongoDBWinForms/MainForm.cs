@@ -42,7 +42,7 @@ namespace Restaurant
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "Hallo";
+            
         }
 
         /*protected async override void OnLoad(EventArgs e)
