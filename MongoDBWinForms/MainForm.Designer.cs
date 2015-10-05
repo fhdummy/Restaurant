@@ -72,9 +72,9 @@
             // 
             // buttonNew
             // 
-            this.buttonNew.Location = new System.Drawing.Point(12, 254);
+            this.buttonNew.Location = new System.Drawing.Point(9, 292);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonNew.Size = new System.Drawing.Size(87, 27);
             this.buttonNew.TabIndex = 6;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(12, 283);
+            this.buttonEdit.Location = new System.Drawing.Point(9, 325);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.Size = new System.Drawing.Size(87, 27);
             this.buttonEdit.TabIndex = 7;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(12, 311);
+            this.buttonDelete.Location = new System.Drawing.Point(9, 359);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(87, 27);
             this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -102,9 +102,9 @@
             // 
             // buttonCopy
             // 
-            this.buttonCopy.Location = new System.Drawing.Point(12, 340);
+            this.buttonCopy.Location = new System.Drawing.Point(9, 391);
             this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(75, 23);
+            this.buttonCopy.Size = new System.Drawing.Size(87, 27);
             this.buttonCopy.TabIndex = 9;
             this.buttonCopy.Text = "Copy";
             this.buttonCopy.UseVisualStyleBackColor = true;
@@ -112,21 +112,23 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(333, 81);
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(125, 8);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(224, 186);
+            this.listBox1.Size = new System.Drawing.Size(261, 409);
             this.listBox1.TabIndex = 10;
             // 
             // TextboxMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 396);
+            this.ClientSize = new System.Drawing.Size(414, 432);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonNew);
+            this.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TextboxMain";
             this._cmPhoto.ResumeLayout(false);
             this._cmAlbum.ResumeLayout(false);

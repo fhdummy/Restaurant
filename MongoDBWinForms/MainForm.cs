@@ -14,42 +14,60 @@ namespace Restaurant
     /// </summary>
     public partial class TextboxMain : Form
     {
-        private Repository<Entry> entryRepository;
-        private Repository<Category> categoryRepository;
+        private static TextboxMain _instance;
+        public Repository<Entry> entryRepository;
+        public Repository<Category> categoryRepository;
+        private NewForm myNewForm = null;
 
         /// <summary>
         /// c'tor
         /// </summary>
-        public TextboxMain()
+
+        public static TextboxMain getInstance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TextboxMain();
+                }
+                return _instance;
+            }
+        }
+
+        private TextboxMain()
         {
             InitializeComponent();
         }
-
+        
         protected async override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
+            myNewForm = new NewForm();
             entryRepository = new Repository<Entry>("RestaurantDemo", "Entry");
             categoryRepository = new Repository<Category>("RestaurantDemo", "Category");
 
             await UpdateEntryDataSource();
         }
 
-        private async void buttonNew_Click(object sender, EventArgs e)
+        private void buttonNew_Click(object sender, EventArgs e)
         {
-            Entry newEntry = new Entry { Name = "Pizzabaecker", CategoryId = System.Guid.NewGuid(), Location = "Salzburg" };
-
-            entryRepository.Add(newEntry);
-
-            await UpdateEntryDataSource();
+            myNewForm.showAsNew();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            
+            Entry editEntry = listBox1.SelectedItem as Entry;
+            if (editEntry == null)
+            {
+                return;
+            }
+
+            myNewForm.showAsEdit(editEntry);
         }
         
-        private async Task UpdateEntryDataSource()
+        public async Task UpdateEntryDataSource()
         {
             listBox1.DataSource = null;
             listBox1.DisplayMember = "Name";

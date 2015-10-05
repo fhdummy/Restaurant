@@ -13,3 +13,5 @@ E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Debug\MongoDB.Driver.GridFS.xml
 E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Debug\MongoDBWinForms.exe
 E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Debug\MongoDBWinForms.pdb
 E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Debug\Restaurant.TextboxMain.resources
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Debug\Restaurant.NewForm.resources
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Debug\MongoDBWinForms.csprojResolveAssemblyReference.cache
