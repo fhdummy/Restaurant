@@ -31,18 +31,41 @@ namespace Restaurant
 
             entryRepository = new Repository<Entry>("RestaurantDemo", "Entry");
             categoryRepository = new Repository<Category>("RestaurantDemo", "Category");
+
+            await UpdateEntryDataSource();
         }
 
-        private void buttonNew_Click(object sender, EventArgs e)
+        private async void buttonNew_Click(object sender, EventArgs e)
         {
             Entry newEntry = new Entry { Name = "Pizzabaecker", CategoryId = System.Guid.NewGuid(), Location = "Salzburg" };
 
             entryRepository.Add(newEntry);
+
+            await UpdateEntryDataSource();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             
+        }
+        
+        private async Task UpdateEntryDataSource()
+        {
+            listBox1.DataSource = null;
+            listBox1.DisplayMember = "Name";
+            listBox1.DataSource = await entryRepository.GetAll();
+        }
+
+        private async void buttonDelete_Click(object sender, EventArgs e)
+        {
+            Entry newEntry = listBox1.SelectedItem as Entry;
+            if (newEntry == null)
+            {
+                return;
+            }
+            entryRepository.Delete(newEntry.Id);
+
+            await UpdateEntryDataSource();
         }
 
         /*protected async override void OnLoad(EventArgs e)
