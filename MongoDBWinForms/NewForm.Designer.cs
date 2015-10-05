@@ -34,8 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxLocation = new System.Windows.Forms.TextBox();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.labelError = new System.Windows.Forms.Label();
+            this.textBoxCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -92,30 +92,31 @@
             this.textBoxLocation.Size = new System.Drawing.Size(371, 23);
             this.textBoxLocation.TabIndex = 5;
             // 
-            // textBoxCategory
-            // 
-            this.textBoxCategory.Location = new System.Drawing.Point(17, 209);
-            this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(371, 23);
-            this.textBoxCategory.TabIndex = 6;
-            // 
             // labelError
             // 
             this.labelError.AutoSize = true;
-            this.labelError.Location = new System.Drawing.Point(14, 259);
+            this.labelError.Location = new System.Drawing.Point(14, 361);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(103, 15);
             this.labelError.TabIndex = 7;
             this.labelError.Text = "Fill out everything.";
             this.labelError.Visible = false;
             // 
+            // textBoxCategory
+            // 
+            this.textBoxCategory.FormattingEnabled = true;
+            this.textBoxCategory.Location = new System.Drawing.Point(17, 209);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(371, 23);
+            this.textBoxCategory.TabIndex = 8;
+            // 
             // NewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 432);
-            this.Controls.Add(this.labelError);
             this.Controls.Add(this.textBoxCategory);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.textBoxLocation);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label3);
@@ -139,7 +140,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxLocation;
-        private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.ComboBox textBoxCategory;
     }
 }

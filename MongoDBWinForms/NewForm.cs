@@ -28,21 +28,36 @@ namespace Restaurant
             myTextboxMain = TextboxMain.getInstance;
         }
 
-        public void showAsNew()
+        public  void showAsNew()
         {
             this.clearAll();
             this.Show();
+            synchroniseCategory();
         }
 
-        public void showAsEdit(Entry newEntry)
+        private async void synchroniseCategory()
+        {
+            textBoxCategory.DataSource = null;
+            textBoxCategory.DisplayMember = "Name";
+            textBoxCategory.DataSource = await categoryRepository.GetAll();
+        }
+
+        public async void showAsEdit(Entry newEntry)
         {
             this.clearAll();
             this.Show();
+            synchroniseCategory();
+
+            Category tempCat;
+
+            tempCat = await categoryRepository.FindbyId(newEntry.CategoryId);
 
             editFlag = true;
             editEntry = newEntry;
             textBoxName.Text = newEntry.Name;
+            textBoxCategory.Text = tempCat.Name;
             textBoxLocation.Text = newEntry.Location;
+            
         }
 
         private void clearAll()
@@ -60,53 +75,76 @@ namespace Restaurant
 
         private async void buttonSave_Click(object sender, EventArgs e)
         {
+            Category tempCat;
+
             if (editFlag == true)
             {
                 if (textBoxName.Text.Trim() == "")
                 {
                     labelError.Show();
+                    return;
                 }
-                else if (textBoxLocation.Text.Trim() == "")
+                if (textBoxLocation.Text.Trim() == "")
                 {
                     labelError.Show();
+                    return;
                 }
-                else if (textBoxCategory.Text == "")
+                if (textBoxCategory.SelectedItem == null)
                 {
-                    labelError.Show();
+                    if (textBoxCategory.Text.Trim() == "")
+                    {
+                        labelError.Show();
+                        return;
+                    }
+                    tempCat = new Category(Name = textBoxCategory.Text);
+                    categoryRepository.Add(tempCat);
                 }
                 else
                 {
-                    editEntry.Name = textBoxName.Text;
-                    editEntry.Location = textBoxLocation.Text;
-                    editFlag = false;
-                    entryRepository.Update(editEntry);
-                    await myTextboxMain.UpdateEntryDataSource();
-                    this.Hide();
-                    this.clearAll();
+                    tempCat = (textBoxCategory.SelectedItem as Category);
                 }
+                editEntry.Name = textBoxName.Text;
+                editEntry.CategoryId = tempCat.Id;
+                editEntry.Location = textBoxLocation.Text;
+                editFlag = false;
+                entryRepository.Update(editEntry);
+                await myTextboxMain.UpdateEntryDataSource();
+                this.Hide();
+                this.clearAll();
             }
             else
             {
                 if (textBoxName.Text.Trim() == "")
                 {
                     labelError.Show();
+                    return;
                 }
-                else if (textBoxLocation.Text.Trim() == "")
+                if (textBoxCategory.Text == "")
                 {
                     labelError.Show();
+                    return;
                 }
-                else if (textBoxCategory.Text == "")
+                if(textBoxCategory.SelectedItem == null)
                 {
-                    labelError.Show();
+                    if(textBoxCategory.Text.Trim() == "")
+                    {
+                        labelError.Show();
+                        return;
+                    }
+                    tempCat = new Category(Name = textBoxCategory.Text);
+                    categoryRepository.Add(tempCat);
                 }
                 else
                 {
-                    Entry newEntry = new Entry { Name = textBoxName.Text, CategoryId = System.Guid.NewGuid(), Location = textBoxLocation.Text };
-                    entryRepository.Add(newEntry);
-                    await myTextboxMain.UpdateEntryDataSource();
-                    this.Hide();
-                    this.clearAll();
+                    tempCat = (textBoxCategory.SelectedItem as Category);
                 }
+                    
+                Entry newEntry = new Entry { Name = textBoxName.Text, CategoryId = tempCat.Id, Location = textBoxLocation.Text };
+                entryRepository.Add(newEntry);
+                    
+                await myTextboxMain.UpdateEntryDataSource();
+                this.Hide();
+                this.clearAll();
             }
         }
     }
