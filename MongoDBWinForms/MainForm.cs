@@ -86,6 +86,24 @@ namespace Restaurant
             await UpdateEntryDataSource();
         }
 
+        private async void buttonCopy_Click(object sender, EventArgs e)
+        {
+            Entry toCopy = listBox1.SelectedItem as Entry;
+            Entry newEntry = new Entry();
+            if (toCopy == null)
+            {
+                return;
+            }
+
+            newEntry.Name = toCopy.Name;
+            newEntry.CategoryId = toCopy.CategoryId;
+            newEntry.Location = toCopy.Location;
+
+            entryRepository.Add(newEntry);
+
+            await UpdateEntryDataSource();
+        }
+
         /*protected async override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

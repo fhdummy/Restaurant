@@ -1,0 +1,16 @@
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDBWinForms.exe.config
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDBWinForms.exe
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDBWinForms.pdb
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Bson.dll
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Driver.Core.dll
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Driver.dll
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Driver.GridFS.dll
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Bson.xml
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Driver.xml
+E:\Studium\UID\Restaurant\MongoDBWinForms\bin\Release\MongoDB.Driver.GridFS.xml
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Release\Restaurant.TextboxMain.resources
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Release\Restaurant.NewForm.resources
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Release\MongoDBWinForms.Properties.Resources.resources
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Release\MongoDBWinForms.csproj.GenerateResource.Cache
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Release\MongoDBWinForms.exe
+E:\Studium\UID\Restaurant\MongoDBWinForms\obj\Release\MongoDBWinForms.pdb
